@@ -1,2 +1,2 @@
 # Settings
-Settings for ESLint, Editorconfig files, Git Aliases, etc.
+Settings for VS Code, Git Aliases, template files, etc.
