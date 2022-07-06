@@ -8,6 +8,7 @@
         "peakchen90.open-html-in-browser",
         "esbenp.prettier-vscode",
         "firsttris.vscode-jest-runner",
-        "mikestead.dotenv"
+        "mikestead.dotenv",
+        "Nautigsam.go-to-test"
     ]
 }
