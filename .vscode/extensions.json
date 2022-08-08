@@ -1,14 +1,14 @@
 {
-    "recommendations": [
-        "editorconfig.editorconfig",
-        "dbaeumer.vscode-eslint",
-        "eamodio.gitlens",
-        "kisstkondoros.vscode-gutter-preview",
-        "pkief.material-icon-theme",
-        "peakchen90.open-html-in-browser",
-        "esbenp.prettier-vscode",
-        "firsttris.vscode-jest-runner",
-        "mikestead.dotenv",
-        "Nautigsam.go-to-test"
-    ]
+	"recommendations": [
+		"editorconfig.editorconfig",
+		"dbaeumer.vscode-eslint",
+		"eamodio.gitlens",
+		"kisstkondoros.vscode-gutter-preview",
+		"pkief.material-icon-theme",
+		"peakchen90.open-html-in-browser",
+		"esbenp.prettier-vscode",
+		"firsttris.vscode-jest-runner",
+		"mikestead.dotenv",
+		"Nautigsam.go-to-test"
+	]
 }
