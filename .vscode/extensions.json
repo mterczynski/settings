@@ -9,6 +9,7 @@
 		"esbenp.prettier-vscode",
 		"firsttris.vscode-jest-runner",
 		"mikestead.dotenv",
-		"Nautigsam.go-to-test"
+		"Nautigsam.go-to-test",
+		"meganrogge.template-string-converter"
 	]
 }
