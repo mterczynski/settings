@@ -1,0 +1,5 @@
+Windows:
+ - pointer speed: 5/11
+ - enhance pointer precision: off
+ 
+DPI: 1600
