@@ -4,6 +4,7 @@ fps_max 300;
 voice_scale 0.5;
 net_graph 1;
 sensitivity 0.4;
+bind t noclip;
 
 // Crosshair
 "cl_crosshair_drawoutline" = "1" client archive ss                               - Draws a black outline around the crosshair for better visibility
