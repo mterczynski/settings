@@ -1,0 +1,22 @@
+{
+    "keydown": {
+        "prefix": ["keydown", "addEventListener_keydown", "dbg_keydown"],
+        "body": [
+            "addEventListener('keydown', ({key}) => {",
+			"\tif (key === 'h') {",
+			"",
+			"\t}",
+            "\tif (key === 'j') {",
+			"",
+			"\t}",
+            "",
+            "\tif (key === 'd') {",
+			"\t\tconst that = this",
+            "\t\tdebugger",
+            "\t\tthat",
+			"\t}",
+			"})"
+        ],
+        "description": "Keydown debug util"
+    }
+}
