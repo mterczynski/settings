@@ -11,6 +11,7 @@ git config --global core.editor "vim";
 alias s="git status";
 alias a="git add .";
 alias f="git fetch";
+alias fm="git fetch; git merge origin/main";
 alias com="git commit";
 alias ch="git checkout";
 alias r="git reset";
