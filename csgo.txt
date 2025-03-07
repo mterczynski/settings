@@ -1,7 +1,0 @@
-bind f r_cleardecals;
-bind mwheeldown +jump;
-fps_max 300;
-voice_scale 0.5;
-net_graph 1;
-sensitivity 0.4;
-bind t noclip;

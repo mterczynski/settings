@@ -1,0 +1,3 @@
+bind mwheeldown +jump;
+fps_max 300;
+bind t noclip;
