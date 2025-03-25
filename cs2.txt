@@ -1,3 +1,8 @@
 bind mwheeldown +jump;
 fps_max 300;
 bind t noclip;
+
+alias "+jumpaction" "+jump;"
+alias "+throwaction" "-attack; -attack2"
+alias "-jumpaction" "-jump"
+bind n "+jumpaction;+throwaction;"
