@@ -2,7 +2,11 @@ bind mwheeldown +jump;
 fps_max 300;
 bind t noclip;
 
-alias "+jumpaction" "+jump;"
-alias "+throwaction" "-attack; -attack2"
-alias "-jumpaction" "-jump"
-bind n "+jumpaction;+throwaction;"
+# Jumpthrow (not working)
+# alias "+jumpaction" "+jump;"
+# alias "+throwaction" "-attack; -attack2"
+# alias "-jumpaction" "-jump"
+# bind n "+jumpaction;+throwaction;"
+
+# Launch settings
+-refresh 250 -freq 250
