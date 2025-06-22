@@ -17,7 +17,8 @@ $apps = @(
     @{ name = "Valve.Steam"; display = "Steam" },
     @{ name = "Signal.Signal"; display = "Signal" },
     @{ name = "Discord.Discord"; display = "Discord" },
-    @{ name = "Telegram.TelegramDesktop"; display = "Telegram" }
+    @{ name = "Telegram.TelegramDesktop"; display = "Telegram" },
+    @{ name = "Brave.Brave"; display = "Brave Browser" }
 )
 
 function Install-Apps {
