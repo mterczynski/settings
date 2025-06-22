@@ -1,7 +1,7 @@
 ## This script was AI generated and not tested by human.
 
-# Set mouse pointer speed to 5/11 (MouseSensitivity=6; Windows uses 1-20, 6 corresponds to 5/11 in the UI)
-Set-ItemProperty -Path "HKCU:\Control Panel\Mouse" -Name MouseSensitivity -Value 6
+# Set mouse pointer speed to 5/11 (MouseSensitivity=8; Windows 10-11 uses 1-20, 8 corresponds to 5/11 in the UI)
+Set-ItemProperty -Path "HKCU:\Control Panel\Mouse" -Name MouseSensitivity -Value 8
 # Disable "Enhance pointer precision" (MouseSpeed=0 disables acceleration)
 Set-ItemProperty -Path "HKCU:\Control Panel\Mouse" -Name MouseSpeed -Value 0
 # Disable first threshold for mouse acceleration (MouseThreshold1=0)
