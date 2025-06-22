@@ -9,7 +9,8 @@ $devTools = @(
     @{ name = "OpenJS.NodeJS.LTS"; display = "Node.js (LTS, includes npm)" },
     @{ name = "Microsoft.VisualStudioCode"; display = "Visual Studio Code" },
     @{ name = "Python.Python.3"; display = "Python 3" },
-    @{ name = "CoreyButler.NVMforWindows"; display = "NVM for Windows" }
+    @{ name = "CoreyButler.NVMforWindows"; display = "NVM for Windows" },
+    @{ name = "Microsoft.OpenJDK.17"; display = "OpenJDK 17 (Microsoft)" }
 )
 
 # General Applications
