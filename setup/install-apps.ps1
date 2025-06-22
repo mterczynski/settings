@@ -19,7 +19,8 @@ $apps = @(
     @{ name = "Signal.Signal"; display = "Signal" },
     @{ name = "Discord.Discord"; display = "Discord" },
     @{ name = "Telegram.TelegramDesktop"; display = "Telegram" },
-    @{ name = "Brave.Brave"; display = "Brave Browser" }
+    @{ name = "Brave.Brave"; display = "Brave Browser" },
+    @{ name = "OBSProject.OBSStudio"; display = "OBS Studio" }
 )
 
 function Install-Apps {
