@@ -25,7 +25,8 @@ $apps = @(
     @{ name = "PostgreSQL.pgAdmin"; display = "pgAdmin" },
     @{ name = "Insomnia.Insomnia"; display = "Insomnia API Client" },
     @{ name = "F.lux.F.lux"; display = "f.lux" },
-    @{ name = "UnityTechnologies.UnityHub"; display = "Unity Hub" }
+    @{ name = "UnityTechnologies.UnityHub"; display = "Unity Hub" },
+    @{ name = "Gpg4win.Gpg4win"; display = "Gpg4win (Kleopatra)" }
 )
 
 function Install-Apps {
