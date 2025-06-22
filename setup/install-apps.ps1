@@ -28,7 +28,8 @@ $apps = @(
     @{ name = "UnityTechnologies.UnityHub"; display = "Unity Hub" },
     @{ name = "Gpg4win.Gpg4win"; display = "Gpg4win (Kleopatra)" },
     @{ name = "RARLab.WinRAR"; display = "WinRAR" },
-    @{ name = "BlenderFoundation.Blender"; display = "Blender" }
+    @{ name = "BlenderFoundation.Blender"; display = "Blender" },
+    @{ name = "CodeAndWeb.TexturePacker"; display = "TexturePacker" }
 )
 
 function Install-Apps {
