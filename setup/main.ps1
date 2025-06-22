@@ -12,4 +12,8 @@ Write-Host "Running git-config.sh..."
 Write-Host "Running clone-all.py..."
 python "$PSScriptRoot/clone-all.py"
 
+# Run windows-settings.ps1
+Write-Host "Running windows-settings.ps1..."
+& "$PSScriptRoot/windows-settings.ps1"
+
 Write-Host "All setup steps completed."
