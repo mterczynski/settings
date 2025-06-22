@@ -20,7 +20,12 @@ $apps = @(
     @{ name = "Discord.Discord"; display = "Discord" },
     @{ name = "Telegram.TelegramDesktop"; display = "Telegram" },
     @{ name = "Brave.Brave"; display = "Brave Browser" },
-    @{ name = "OBSProject.OBSStudio"; display = "OBS Studio" }
+    @{ name = "OBSProject.OBSStudio"; display = "OBS Studio" },
+    @{ name = "PostgreSQL.PostgreSQL"; display = "PostgreSQL" },
+    @{ name = "PostgreSQL.pgAdmin"; display = "pgAdmin" },
+    @{ name = "Insomnia.Insomnia"; display = "Insomnia API Client" },
+    @{ name = "F.lux.F.lux"; display = "f.lux" },
+    @{ name = "UnityTechnologies.UnityHub"; display = "Unity Hub" }
 )
 
 function Install-Apps {
