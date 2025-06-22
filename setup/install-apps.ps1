@@ -26,7 +26,9 @@ $apps = @(
     @{ name = "Insomnia.Insomnia"; display = "Insomnia API Client" },
     @{ name = "F.lux.F.lux"; display = "f.lux" },
     @{ name = "UnityTechnologies.UnityHub"; display = "Unity Hub" },
-    @{ name = "Gpg4win.Gpg4win"; display = "Gpg4win (Kleopatra)" }
+    @{ name = "Gpg4win.Gpg4win"; display = "Gpg4win (Kleopatra)" },
+    @{ name = "RARLab.WinRAR"; display = "WinRAR" },
+    @{ name = "BlenderFoundation.Blender"; display = "Blender" }
 )
 
 function Install-Apps {
