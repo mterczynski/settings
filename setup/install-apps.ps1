@@ -7,7 +7,9 @@
 $devTools = @(
     @{ name = "Git.Git"; display = "Git (with Git Bash)" },
     @{ name = "OpenJS.NodeJS.LTS"; display = "Node.js (LTS, includes npm)" },
-    @{ name = "Microsoft.VisualStudioCode"; display = "Visual Studio Code" }
+    @{ name = "Microsoft.VisualStudioCode"; display = "Visual Studio Code" },
+    @{ name = "Python.Python.3"; display = "Python 3" },
+    @{ name = "CoreyButler.NVMforWindows"; display = "NVM for Windows" }
 )
 
 # General Applications
