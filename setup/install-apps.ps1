@@ -1,5 +1,5 @@
 ## IMPORTANT: This script is AI generated and may not be fully functional.
-## It wasn't run or tested by a human.
+## It wasn't tested for all packages.
 
 # Requires: Windows 10/11 with Winget installed
 
