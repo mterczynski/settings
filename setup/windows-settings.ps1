@@ -1,4 +1,4 @@
-## This script was AI generated and not tested by human.
+## This script was mostly AI generated and not fully tested by a human.
 
 # Set mouse pointer speed to 5/11 (MouseSensitivity=8; Windows 10-11 uses 1-20, 8 corresponds to 5/11 in the UI)
 Set-ItemProperty -Path "HKCU:\Control Panel\Mouse" -Name MouseSensitivity -Value 5
@@ -33,5 +33,8 @@ Set-WinLocale pl-PL
 Set-ItemProperty -Path "HKCU:\Control Panel\International" -Name sShortDate -Value "dd/MM/yyyy"
 Set-ItemProperty -Path "HKCU:\Control Panel\International" -Name sTimeFormat -Value "HH:mm"
 Set-ItemProperty -Path "HKCU:\Control Panel\International" -Name iTime -Value 1
+
+# Disable Microsoft 365 Copilot
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot" /v TurnOffWindowsCopilot /t REG_DWORD /d 1 /f
 
 Write-Host "Windows settings applied. Some changes may require logoff or restart to take effect."
