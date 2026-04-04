@@ -6,6 +6,12 @@
 set -e
 
 echo ""
+echo "### Enabling Universe repository ###"
+echo ""
+sudo apt-get install -y software-properties-common
+sudo add-apt-repository -y universe
+
+echo ""
 echo "### Updating package lists ###"
 echo ""
 sudo apt-get update
