@@ -1,9 +1,10 @@
 #!/bin/bash
-# main.sh - Main setup script for Linux/WSL
+# main.sh - Main setup script for WSL (Windows Subsystem for Linux)
 
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SETUP_DIR="$SCRIPT_DIR/.."
 
 # ─── 1. Install applications ─────────────────────────────────────────────────
 echo "Running install-apps.sh..."
@@ -11,7 +12,7 @@ bash "$SCRIPT_DIR/install-apps.sh"
 
 # ─── 2. Configure git ────────────────────────────────────────────────────────
 echo "Running git-config.sh..."
-bash "$SCRIPT_DIR/git-config.sh"
+bash "$SETUP_DIR/git-config.sh"
 
 # ─── 3. Create a new SSH key ─────────────────────────────────────────────────
 echo ""
@@ -42,7 +43,7 @@ ssh-add "$SSH_KEY"
 # ─── 4. Clone all public repositories ────────────────────────────────────────
 echo ""
 echo "Running clone-all.py..."
-python3 "$SCRIPT_DIR/clone-all.py"
+python3 "$SETUP_DIR/clone-all.py"
 
 echo ""
 echo "### All setup steps completed ###"
