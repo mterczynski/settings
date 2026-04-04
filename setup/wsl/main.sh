@@ -1,10 +1,15 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # main.sh - Main setup script for WSL (Windows Subsystem for Linux)
 
-set -e
+# If invoked as `sh setup/wsl/main.sh`, re-run under bash so BASH_SOURCE works.
+if [ -z "${BASH_VERSION:-}" ]; then
+    exec bash "$0" "$@"
+fi
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SETUP_DIR="$SCRIPT_DIR/.."
+set -euo pipefail
+
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]:-$0}")" && pwd)"
+SETUP_DIR="$(cd -- "$SCRIPT_DIR/.." && pwd)"
 
 # ─── 1. Install applications ─────────────────────────────────────────────────
 echo "Running install-apps.sh..."
