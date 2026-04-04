@@ -6,13 +6,6 @@
 set -e
 
 echo ""
-echo "### Enabling Universe repository ###"
-echo ""
-sudo apt-get update
-sudo apt-get install -y software-properties-common
-sudo add-apt-repository -y universe
-
-echo ""
 echo "### Updating package lists ###"
 echo ""
 sudo apt-get update
@@ -31,9 +24,9 @@ sudo apt-get install -y git
 echo "Installing Python 3..."
 sudo apt-get install -y python3 python3-pip python3-venv
 
-# OpenJDK 17
-echo "Installing OpenJDK 17..."
-sudo apt-get install -y openjdk-17-jdk
+# JDK (default for the current Ubuntu release)
+echo "Installing default JDK..."
+sudo apt-get install -y default-jdk
 
 # curl & build-essential (needed by nvm / other installers)
 sudo apt-get install -y curl build-essential
