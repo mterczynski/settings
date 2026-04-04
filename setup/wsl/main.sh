@@ -45,7 +45,12 @@ fi
 eval "$(ssh-agent -s)"
 ssh-add "$SSH_KEY"
 
-# ─── 4. Clone all public repositories ────────────────────────────────────────
+# ─── 4. Install Python dependencies ─────────────────────────────────────────
+echo ""
+echo "Installing Python dependencies..."
+pip3 install -r "$SETUP_DIR/requirements.txt"
+
+# ─── 5. Clone all public repositories ────────────────────────────────────────
 echo ""
 echo "Running clone-all.py..."
 python3 "$SETUP_DIR/clone-all.py"
