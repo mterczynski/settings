@@ -4,8 +4,7 @@ import subprocess
 
 # CONFIGURATION
 username = "mterczynski"
-token = ""  # Use a personal access token
-clone_dir = os.path.expanduser("~/Desktop/dev/github")  # Directory to store cloned repos
+clone_dir = os.path.expanduser("~/dev/github")  # Directory to store cloned repos
 
 # Create output directory
 os.makedirs(clone_dir, exist_ok=True)
@@ -17,7 +16,7 @@ per_page = 100  # max per GitHub API
 while True:
     print(f"Fetching page {page}...")
     url = f"https://api.github.com/user/repos?per_page={per_page}&page={page}&affiliation=owner"
-    response = requests.get(url, auth=(username, token))
+    response = requests.get(url)
 
     if response.status_code != 200:
         print("Error:", response.status_code, response.text)
@@ -28,7 +27,7 @@ while True:
         break
 
     for repo in repos:
-        clone_url = repo["clone_url"].replace("https://", f"https://{username}:{token}@")
+        clone_url = repo["clone_url"].replace("https://", f"https://{username}")
         repo_name = repo["name"]
         dest_path = os.path.join(clone_dir, repo_name)
 
