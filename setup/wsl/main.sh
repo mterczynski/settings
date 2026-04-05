@@ -45,15 +45,25 @@ fi
 eval "$(ssh-agent -s)"
 ssh-add "$SSH_KEY"
 
-# ─── 4. Install Python dependencies ─────────────────────────────────────────
+# ─── 4. Install Python dependencies locally (if needed) ─────────────────────
 echo ""
-echo "Installing Python dependencies..."
-pip3 install -r "$SETUP_DIR/requirements.txt"
+VENV_DIR="$SETUP_DIR/.venv"
+PYTHON_BIN="python3"
+
+if [ -s "$SETUP_DIR/requirements.txt" ]; then
+    echo "Installing Python dependencies in a local virtual environment..."
+    if [ ! -d "$VENV_DIR" ]; then
+        python3 -m venv "$VENV_DIR"
+    fi
+
+    "$VENV_DIR/bin/pip" install -r "$SETUP_DIR/requirements.txt"
+    PYTHON_BIN="$VENV_DIR/bin/python"
+fi
 
 # ─── 5. Clone all public repositories ────────────────────────────────────────
 echo ""
 echo "Running clone-all.py..."
-python3 "$SETUP_DIR/clone-all.py"
+"$PYTHON_BIN" "$SETUP_DIR/clone-all.py"
 
 echo ""
 echo "### All setup steps completed ###"
