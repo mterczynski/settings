@@ -31,6 +31,10 @@ sudo apt-get install -y default-jdk
 # curl & build-essential (needed by nvm / other installers)
 sudo apt-get install -y curl build-essential
 
+# GitHub CLI (gh)
+echo "Installing GitHub CLI..."
+sudo apt-get install -y gh
+
 # NVM (Node Version Manager) + Node.js LTS
 echo "Installing NVM..."
 if [ ! -d "$HOME/.nvm" ]; then
