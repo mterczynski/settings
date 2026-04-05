@@ -1,40 +1,56 @@
-import requests
 import os
 import subprocess
 
+import requests
+
 # CONFIGURATION
-username = "mterczynski"
-clone_dir = os.path.expanduser("~/dev/github")  # Directory to store cloned repos
+USERNAME = "mterczynski"
+CLONE_DIR = os.path.expanduser("~/dev/github")  # Directory to store cloned repos
+PER_PAGE = 100  # max per GitHub API
 
-# Create output directory
-os.makedirs(clone_dir, exist_ok=True)
 
-# Pagination variables
-page = 1
-per_page = 100  # max per GitHub API
+def fetch_repos(username: str):
+    """Yield all public repositories for a GitHub user."""
+    page = 1
 
-while True:
-    print(f"Fetching page {page}...")
-    url = f"https://api.github.com/user/repos?per_page={per_page}&page={page}&affiliation=owner"
-    response = requests.get(url)
+    while True:
+        print(f"Fetching page {page}...")
+        response = requests.get(
+            f"https://api.github.com/users/{username}/repos",
+            params={"per_page": PER_PAGE, "page": page, "type": "owner", "sort": "full_name"},
+            headers={"Accept": "application/vnd.github+json"},
+            timeout=30,
+        )
 
-    if response.status_code != 200:
-        print("Error:", response.status_code, response.text)
-        break
+        if response.status_code != 200:
+            print("Error:", response.status_code, response.text)
+            return
 
-    repos = response.json()
-    if not repos:
-        break
+        repos = response.json()
+        if not repos:
+            return
 
-    for repo in repos:
-        clone_url = repo["clone_url"].replace("https://", f"https://{username}")
+        yield from repos
+        page += 1
+
+
+def main():
+    os.makedirs(CLONE_DIR, exist_ok=True)
+
+    for repo in fetch_repos(USERNAME):
         repo_name = repo["name"]
-        dest_path = os.path.join(clone_dir, repo_name)
+        clone_url = repo["clone_url"]  # already HTTPS
+        dest_path = os.path.join(CLONE_DIR, repo_name)
 
         if os.path.exists(dest_path):
             print(f"Skipping already cloned repo: {repo_name}")
-        else:
-            print(f"Cloning {repo_name}...")
-            subprocess.run(["git", "clone", clone_url], cwd=clone_dir)
+            continue
 
-    page += 1
+        print(f"Cloning {repo_name}...")
+        result = subprocess.run(["git", "clone", clone_url], cwd=CLONE_DIR)
+        if result.returncode != 0:
+            print(f"Failed to clone {repo_name}")
+
+
+if __name__ == "__main__":
+    main()
