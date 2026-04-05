@@ -59,39 +59,9 @@ echo ""
 echo "Installing PostgreSQL..."
 sudo apt-get install -y postgresql postgresql-contrib
 
-# Docker Engine + Docker Compose plugin
+# Docker Engine + Docker Compose
 echo "Installing Docker Engine and Docker Compose..."
-
-# Prerequisites
-sudo apt-get install -y ca-certificates curl gnupg lsb-release
-
-# shellcheck source=/dev/null
-. /etc/os-release
-
-# Add Docker's official GPG key (idempotent)
-sudo install -m 0755 -d /etc/apt/keyrings
-if [ ! -f /etc/apt/keyrings/docker.gpg ]; then
-    curl -fsSL "https://download.docker.com/linux/${ID}/gpg" \
-        | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-fi
-sudo chmod a+r /etc/apt/keyrings/docker.gpg
-
-# Add Docker apt repository (idempotent)
-if [ ! -f /etc/apt/sources.list.d/docker.list ]; then
-    echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] \
-https://download.docker.com/linux/${ID} ${VERSION_CODENAME} stable" \
-        | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-    sudo apt-get update
-fi
-
-sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-
-# Allow running Docker without sudo (takes effect on next login)
-if sudo usermod -aG docker "$USER"; then
-    echo "Added $USER to the docker group — please log out and back in for this to take effect."
-else
-    echo "Warning: could not add $USER to the docker group. You may need to run Docker commands with sudo."
-fi
+curl -fsSL https://get.docker.com | sh
 
 echo ""
 echo "### All applications installed successfully ###"
