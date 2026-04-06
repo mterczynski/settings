@@ -59,6 +59,10 @@ echo ""
 echo "Installing PostgreSQL..."
 sudo apt-get install -y postgresql postgresql-contrib
 
+# Docker Engine + Docker Compose
+echo "Installing Docker Engine and Docker Compose..."
+curl -fsSL https://get.docker.com | sh
+
 echo ""
 echo "### All applications installed successfully ###"
 echo ""
