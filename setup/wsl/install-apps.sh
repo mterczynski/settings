@@ -28,8 +28,8 @@ sudo apt-get install -y python3 python3-pip python3-venv
 echo "Installing default JDK..."
 sudo apt-get install -y default-jdk
 
-# curl & build-essential (needed by nvm / other installers)
-sudo apt-get install -y curl build-essential
+# curl & wget & build-essential (needed by nvm / other installers)
+sudo apt-get install -y curl build-essential wget gnupg lsb-release
 
 # GitHub CLI (gh)
 echo "Installing GitHub CLI..."
@@ -58,6 +58,11 @@ echo ""
 # PostgreSQL
 echo "Installing PostgreSQL..."
 sudo apt-get install -y postgresql postgresql-contrib
+
+# Terraform
+wget -O - https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(grep -oP '(?<=UBUNTU_CODENAME=).*' /etc/os-release || lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+sudo apt update && sudo apt install terraform
 
 # Docker Engine + Docker Compose
 echo "Installing Docker Engine and Docker Compose..."
