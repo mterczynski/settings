@@ -49,6 +49,9 @@ echo "Installing Node.js LTS via NVM..."
 nvm install --lts
 nvm use --lts
 
+# Global npm-check-updates install
+npm i -g npm-check-updates
+
 # ─── General Applications ────────────────────────────────────────────────────
 
 echo ""
